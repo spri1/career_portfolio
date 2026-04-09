@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaditri Suresh | Public Policy Advocate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --deep: #0d1f3c;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f8f4ec;
+    --white: #ffffff;
+    --text: #1a2a42;
+    --muted: #6b7a96;
+    --border: #d4c9b0;
+    --section-bg: #f3efe7;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,22,40,0.97);
+    backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em;
+    color: var(--gold); text-transform: uppercase; white-space: nowrap;
+  }
+  .nav-links {
+    display: flex; gap: 0; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none; font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 600;
+    padding: 0 0.85rem; line-height: 60px;
+    transition: color 0.2s;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links a:first-child { border-left: 1px solid rgba(255,255,255,0.08); }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 79px, rgba(201,168,76,0.04) 80px
+    ), repeating-linear-gradient(
+      90deg, transparent, transparent 79px, rgba(201,168,76,0.04) 80px
+    );
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 4rem 80px 5rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.3em; color: var(--gold);
+    text-transform: uppercase; font-weight: 600; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300; color: var(--white); line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+  .hero-name em { font-style: italic; color: var(--gold); }
+  .hero-title {
+    font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 2rem;
+  }
+  .hero-bio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.7);
+    max-width: 440px; margin-bottom: 3rem;
+  }
+  .hero-meta {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.6rem; }
+  .hero-meta .dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+  .hero-right {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    padding: 120px 4rem 80px 2rem;
+  }
+  .hero-img-frame {
+    position: relative; width: 340px;
+  }
+  .hero-img-frame::before {
+    content: '';
+    position: absolute; top: -20px; right: -20px;
+    width: 100%; height: 100%;
+    border: 1px solid var(--gold);
+    opacity: 0.4;
+  }
+  .hero-img-frame::after {
+    content: '';
+    position: absolute; bottom: -20px; left: -20px;
+    width: 60%; height: 60%;
+    border: 1px solid var(--gold);
+    opacity: 0.2;
+  }
+  .hero-img-frame img {
+    width: 340px; height: 380px; object-fit: cover;
+    display: block;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); animation: bounce 2s ease infinite;
+  }
+  .hero-scroll::after {
+    content: '↓'; font-size: 1rem; color: var(--gold);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTION SHARED ── */
+  section { scroll-margin-top: 60px; }
+
+  .section-header {
+    text-align: center; padding: 5rem 2rem 3rem;
+  }
+  .section-label {
+    font-size: 0.6rem; letter-spacing: 0.35em; color: var(--gold);
+    text-transform: uppercase; font-weight: 700; margin-bottom: 1rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 300; color: var(--navy); line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-rule {
+    width: 60px; height: 1px; background: var(--gold);
+    margin: 1.5rem auto 0;
+  }
+
+  /* ── RESUME ── */
+  #resume { background: var(--white); }
+
+  .resume-grid {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem 6rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  }
+
+  .resume-col-label {
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 2rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+  }
+
+  .resume-item { margin-bottom: 2rem; }
+  .resume-item-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem;
+  }
+  .resume-item-sub {
+    font-size: 0.65rem; letter-spacing: 0.12em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .resume-item-text {
+    font-size: 0.8rem; line-height: 1.7; color: var(--muted);
+  }
+  .resume-item-text ul { padding-left: 1.2rem; }
+  .resume-item-text li { margin-bottom: 0.3rem; }
+
+  .resume-skill-bars { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+  .skill-bar-row { display: flex; flex-direction: column; gap: 0.35rem; }
+  .skill-bar-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--text); text-transform: uppercase;
+  }
+  .skill-bar-track {
+    height: 3px; background: var(--border); position: relative;
+  }
+  .skill-bar-fill {
+    position: absolute; left: 0; top: 0; height: 100%; background: var(--gold);
+  }
+
+  .gpa-badge {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: var(--navy); color: var(--white);
+    padding: 1.5rem 2rem; margin: 1rem 0; border-left: 3px solid var(--gold);
+  }
+  .gpa-badge .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 300; color: var(--gold); line-height: 1;
+  }
+  .gpa-badge .lbl { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.4rem; }
+
+  .awards-list { list-style: none; padding: 0; }
+  .awards-list li {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 0; border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+  .awards-list li:last-child { border-bottom: none; }
+  .award-dot {
+    width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
+    flex-shrink: 0; margin-top: 4px;
+  }
+  .award-info strong { display: block; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .award-info span { color: var(--muted); line-height: 1.5; }
+
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    background: var(--navy); color: var(--gold);
+    padding: 0.85rem 2rem; font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 700;
+    text-decoration: none; border: 1px solid var(--gold);
+    transition: all 0.2s; margin-top: 1.5rem;
+  }
+  .download-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── CAREER RESEARCH ── */
+  #career-research { background: var(--navy); color: var(--white); }
+  #career-research .section-title { color: var(--white); }
+
+  .research-intro {
+    max-width: 720px; margin: 0 auto 4rem; padding: 0 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.75);
+    text-align: center;
+  }
+
+  .research-cards {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem 2rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .research-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+  .research-card:hover { background: rgba(201,168,76,0.06); }
+  .research-card-icon {
+    font-size: 1.5rem; margin-bottom: 1.5rem; display: block;
+  }
+  .research-card-title {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 1rem;
+  }
+  .research-card-body {
+    font-size: 0.82rem; line-height: 1.8; color: rgba(255,255,255,0.65);
+  }
+
+  /* Salary Stats */
+  .salary-section {
+    max-width: 1100px; margin: 4rem auto 0; padding: 3rem;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .salary-label {
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 2rem;
+  }
+  .salary-bars { display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 3rem; }
+  .salary-bar-col { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; }
+  .salary-bar-visual {
+    width: 100%; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    position: relative; display: flex; align-items: flex-end;
+  }
+  .salary-bar-fill {
+    width: 100%; background: linear-gradient(to top, var(--gold), rgba(201,168,76,0.3));
+  }
+  .salary-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; color: var(--gold); font-weight: 300;
+  }
+  .salary-role {
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); text-align: center;
+  }
+
+  /* Growth paths */
+  .growth-grid {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem 4rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  }
+  .growth-card {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.15);
+    padding: 1.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.6;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .growth-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: rgba(201,168,76,0.3); font-weight: 300; line-height: 1;
+  }
+
+  /* ── CHALLENGES & SOLUTIONS ── */
+  #obstacles { background: var(--section-bg); }
+  .obstacles-grid {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem 6rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .obstacle-card {
+    background: var(--white); border-top: 3px solid var(--gold);
+    padding: 2rem;
+  }
+  .obstacle-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: rgba(201,168,76,0.25); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .obstacle-title {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--navy); font-weight: 700; margin-bottom: 1rem;
+  }
+  .obstacle-problem {
+    font-size: 0.8rem; line-height: 1.7; color: var(--muted);
+    margin-bottom: 1rem; padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .obstacle-solution-label {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .obstacle-solution {
+    font-size: 0.8rem; line-height: 1.7; color: var(--text);
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--white); }
+  .education-grid {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem 6rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem;
+  }
+  .edu-card {
+    border: 1px solid var(--border); padding: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold);
+  }
+  .edu-card-img {
+    width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;
+    filter: grayscale(30%);
+  }
+  .edu-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .edu-card-sub {
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 1rem;
+  }
+  .edu-card-body {
+    font-size: 0.8rem; line-height: 1.7; color: var(--muted);
+  }
+  .edu-card-body ul { padding-left: 1.2rem; }
+  .edu-card-body li { margin-bottom: 0.4rem; }
+
+  .impact-quote {
+    background: var(--navy); padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic; line-height: 1.7;
+    color: rgba(255,255,255,0.8); margin-top: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* ── SKILLS & CERTIFICATION ── */
+  #skills { background: var(--navy); }
+  #skills .section-title { color: var(--white); }
+
+  .skills-layout {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem 6rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  }
+  .skills-col-label {
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 2rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .skill-matrix {
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .skill-row {
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem;
+  }
+  .skill-name {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.8); font-weight: 600;
+  }
+  .skill-level {
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .skill-track {
+    height: 2px; background: rgba(255,255,255,0.1); margin-top: 0.4rem;
+    grid-column: 1 / -1;
+  }
+  .skill-progress {
+    height: 100%; background: linear-gradient(to right, var(--gold), var(--gold-light));
+  }
+
+  .cert-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 2rem; margin-bottom: 2rem;
+  }
+  .cert-badge {
+    display: inline-block;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--navy); background: var(--gold);
+    padding: 0.3rem 0.75rem; font-weight: 700; margin-bottom: 1rem;
+  }
+  .cert-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem;
+  }
+  .cert-issuer {
+    font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 1rem;
+  }
+  .cert-desc {
+    font-size: 0.82rem; line-height: 1.8; color: rgba(255,255,255,0.65);
+  }
+  .cert-img {
+    width: 100%; max-height: 220px; object-fit: cover; margin-top: 1.5rem;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  /* ── SOURCES ── */
+  #sources { background: var(--section-bg); }
+  .sources-grid {
+    max-width: 900px; margin: 0 auto; padding: 0 3rem 6rem;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .source-item {
+    display: grid; grid-template-columns: 40px 1fr; gap: 1.5rem;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .source-item:last-child { border-bottom: none; }
+  .source-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--gold); font-weight: 300; line-height: 1;
+  }
+  .source-text {
+    font-size: 0.78rem; line-height: 1.7; color: var(--muted);
+  }
+  .source-text strong { color: var(--text); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+  #contact .section-title { color: var(--white); }
+  .contact-content {
+    max-width: 700px; margin: 0 auto; padding: 2rem 3rem 6rem;
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+  .contact-info {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .contact-block {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2);
+    padding: 1.5rem;
+  }
+  .contact-block-label {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .contact-block-value {
+    font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.5;
+  }
+  .contact-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic;
+    color: rgba(255,255,255,0.5); text-align: center;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060e1c; padding: 2rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: var(--gold); letter-spacing: 0.1em;
+  }
+  .footer-copy {
+    font-size: 0.65rem; color: rgba(255,255,255,0.3); letter-spacing: 0.1em;
+  }
+  .footer-fbla {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(201,168,76,0.5); text-align: right;
+  }
+
+  /* SCORING BADGE (hidden from presentation, shown for reference) */
+  .score-tag {
+    display: none;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name { animation-delay: 0.2s; }
+  .hero-title { animation-delay: 0.3s; }
+  .hero-bio { animation-delay: 0.4s; }
+  .hero-meta { animation-delay: 0.5s; }
+  .hero-right { animation: fadeUp 0.9s 0.3s ease both; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 120px 2rem 60px; }
+    .resume-grid, .research-cards, .education-grid, .skills-layout,
+    .obstacles-grid, .growth-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .salary-bars { flex-wrap: wrap; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Aaditri Suresh</div>
+  <ul class="nav-links">
+    <a href="#resume">Resume</a>
+    <a href="#career-research">Career Research</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#obstacles">Challenges</a>
+    <a href="#sources">Sources</a>
+    <a href="#contact">Contact</a>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-lines"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">FBLA Career Portfolio · 2025–2026</div>
+    <h1 class="hero-name">Aaditri<br><em>Suresh</em></h1>
+    <div class="hero-title">Public Policy Advocate · Law</div>
+    <p class="hero-bio">As a sophomore at Parkland High School, I am dedicated to building a foundation for my professional future. This career portfolio documents my academic achievements, skill development, and evolving career goals — offering a comprehensive look at my readiness to succeed in law and public policy.</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span> Parkland High School · Allentown, PA 18104</span>
+      <span><span class="dot"></span> Anticipated Graduation: May 24, 2028</span>
+      <span><span class="dot"></span> Unweighted GPA: 3.97 / 4.0 · Class Rank: 4 / 580</span>
+      <span><span class="dot"></span> info@aaditris.com · 123-456-7890</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-frame">
+      <img src="https://static.wixstatic.com/media/85c917_9083593464f4449aafbf6b0c94843dce~mv2.jpeg" alt="Aaditri Suresh">
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     RESUME
+══════════════════════════════════════ -->
+<section id="resume">
+  <div class="section-header">
+    <span class="section-label">Section 01</span>
+    <h2 class="section-title">Resume &amp; <em>Accomplishments</em></h2>
+    <div class="section-rule"></div>
+    <p style="max-width:600px;margin:1.5rem auto 0;font-size:0.85rem;color:var(--muted);line-height:1.7;">
+      My experiences, qualifications, and awards are directly aligned with the analytical rigor, advocacy skills, and ethical judgment required of a public policy attorney.
+    </p>
+  </div>
+
+  <div class="resume-grid">
+    <!-- LEFT COL -->
+    <div>
+      <div class="resume-col-label">Education &amp; Academic Standing</div>
+
+      <div class="resume-item">
+        <div class="resume-item-title">Parkland High School</div>
+        <div class="resume-item-sub">Allentown, PA · Anticipated Graduation May 2028</div>
+        <div style="display:flex;gap:1.5rem;margin:0.75rem 0;">
+          <div class="gpa-badge"><span class="num">3.97</span><span class="lbl">Unweighted GPA</span></div>
+          <div class="gpa-badge"><span class="num">4/580</span><span class="lbl">Class Rank</span></div>
+        </div>
+        <div class="resume-item-text">
+          <strong style="display:block;margin-bottom:0.5rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);">Advanced Coursework</strong>
+          <ul>
+            <li><strong>Mathematics:</strong> AP Calculus BC, AP Calculus AB, AP Computer Science Principles, Precalculus Honors</li>
+            <li><strong>Sciences:</strong> AP Biology, AP Physics 1, Chemistry Honors, Biology Honors</li>
+            <li><strong>Humanities:</strong> AP Language &amp; Composition, Honors Spanish II–IV, Honors English I &amp; II</li>
+          </ul>
+          <p style="margin-top:0.75rem;"><strong>Honors:</strong> National Honor Society · National Science Honor Society · National Math Honor Society</p>
+        </div>
+      </div>
+
+      <div class="resume-col-label" style="margin-top:2.5rem;">Recognitions &amp; Awards</div>
+
+      <ul class="awards-list">
+        <li>
+          <span class="award-dot"></span>
+          <span class="award-info">
+            <strong>International Science &amp; Engineering Fair — 2025 Finalist</strong>
+            <span>Designed and implemented an eco-friendly filtration mechanism removing microplastic contaminants from potable water. Demonstrates research, analytical, and scientific-writing skills essential to public-interest law.</span>
+          </span>
+        </li>
+        <li>
+          <span class="award-dot"></span>
+          <span class="award-info">
+            <strong>FBLA — 1st Place Regional · 5th Place State (Public Speaking)</strong>
+            <span>Earned 1st place at the FBLA regional conference and 5th place at the Pennsylvania State Conference in Hershey, PA — directly building the oral-advocacy skills required in courtroom and legislative settings.</span>
+          </span>
+        </li>
+        <li>
+          <span class="award-dot"></span>
+          <span class="award-info">
+            <strong>National Catholic Forensic League — 5th Place (Declamation)</strong>
+            <span>First-ever freshman selected for Varsity EPC Debate. 5th-place recognition at a nationally competitive qualifier strengthens persuasive argumentation skills critical in law.</span>
+          </span>
+        </li>
+        <li>
+          <span class="award-dot"></span>
+          <span class="award-info">
+            <strong>Scholastic Writing — Regional Key, National Guild Five-Year Award</strong>
+            <span>Consistent excellence in academic writing published across multiple outlets. Legal practice fundamentally depends on precise, compelling written advocacy.</span>
+          </span>
+        </li>
+        <li>
+          <span class="award-dot"></span>
+          <span class="award-info">
+            <strong>Girls Who Code — Co-Facilitator (2021–Present)</strong>
+            <span>Four-year leadership in mentoring students in foundational programming — demonstrating technology fluency increasingly vital in AI &amp; Law policy work.</span>
+          </span>
+        </li>
+      </ul>
+
+      <a href="https://63875de4-291d-443b-9670-3df5b4a1a4f7.filesusr.com/ugd/85c917_671ec35b9dd64b23ab4838983d54e74c.pdf" class="download-btn" target="_blank">
+        ↓ Download Full Resume (PDF)
+      </a>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div>
+      <div class="resume-col-label">Volunteering &amp; Community Impact</div>
+
+      <div class="resume-item">
+        <div class="resume-item-title">St. Luke's Hospital</div>
+        <div class="resume-item-sub">Patient Advocate · 2024–Present</div>
+        <div class="resume-item-text">Assisted staff in daily operations and worked directly with community members in need, specializing in senior outreach and pharmaceutical assistance. Patient advocacy is a direct analogue to legal client representation.</div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-title">National Honor Society Tutor</div>
+        <div class="resume-item-sub">Academic Tutor · Ongoing</div>
+        <div class="resume-item-text">Provided one-on-one tutoring sessions, strengthening academic skills and fostering a positive learning environment — reflecting the mentorship and communication competencies central to legal practice.</div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-title">Amnesty International</div>
+        <div class="resume-item-sub">Human Rights Advocacy · 2024–Present</div>
+        <div class="resume-item-text">Advanced global human rights initiatives through research and cross-functional outreach, championing social justice and systemic equality — directly aligned with a public policy legal career focused on civil rights and legislative reform.</div>
+      </div>
+
+      <div class="resume-col-label" style="margin-top:2.5rem;">Skills Alignment With Career</div>
+      <div class="resume-skill-bars">
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Legal Research &amp; Writing</span><span>Advanced</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Public Speaking &amp; Advocacy</span><span>Advanced</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Policy Analysis</span><span>Advanced</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Negotiation &amp; Argumentation</span><span>Advanced</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Ethical Decision Making</span><span>Proficient</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-label"><span>Technology &amp; AI Law</span><span>Proficient</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CAREER RESEARCH
+══════════════════════════════════════ -->
+<section id="career-research">
+  <div class="section-header">
+    <span class="section-label">Section 02</span>
+    <h2 class="section-title">Comprehensive <em>Career Research</em></h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="research-intro">
+    A public policy attorney advises governments, nonprofits, and advocacy organizations on legislation, regulatory compliance, and systemic reform. The role combines legal expertise with strategic advocacy — interpreting law to create equitable policy outcomes at local, state, and federal levels.
+  </div>
+
+  <div class="research-cards">
+    <div class="research-card">
+      <span class="research-card-icon">🎓</span>
+      <div class="research-card-title">Education Pathway</div>
+      <div class="research-card-body">
+        <strong style="color:var(--gold-light);">Bachelor's Degree (4 years)</strong><br>
+        Common majors: Political Science, Economics, Philosophy, History. Focus on critical thinking, research, and persuasive writing.<br><br>
+        <strong style="color:var(--gold-light);">Juris Doctor — Law School (3 years)</strong><br>
+        Accredited ABA law school. Covers constitutional law, contracts, torts, civil procedure, and legal writing.<br><br>
+        <strong style="color:var(--gold-light);">Bar Examination</strong><br>
+        Must pass the bar exam in the state of intended practice. Continuing Legal Education (CLE) required throughout career.
+      </div>
+    </div>
+    <div class="research-card">
+      <span class="research-card-icon">⚖️</span>
+      <div class="research-card-title">Daily Responsibilities</div>
+      <div class="research-card-body">
+        Public policy attorneys draft and analyze legislation, represent clients in regulatory proceedings, advise on compliance, submit comments to administrative agencies, lobby legislators, and litigate in federal and state courts when necessary.<br><br>
+        <strong style="color:var(--gold-light);">Key Specializations:</strong>
+        <ul style="margin-top:0.5rem;padding-left:1.2rem;color:rgba(255,255,255,0.55);">
+          <li>Environmental &amp; Energy Law</li>
+          <li>Civil Rights &amp; Social Justice</li>
+          <li>Healthcare Policy</li>
+          <li>Education Law</li>
+          <li>Technology &amp; AI Governance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="research-card">
+      <span class="research-card-icon">📈</span>
+      <div class="research-card-title">Long-Term Outlook</div>
+      <div class="research-card-body">
+        The U.S. Bureau of Labor Statistics projects steady demand for attorneys, with the growing complexity of technology, data privacy, and AI regulation creating new specializations.<br><br>
+        <strong style="color:var(--gold-light);">Key Growth Drivers:</strong>
+        <ul style="margin-top:0.5rem;padding-left:1.2rem;color:rgba(255,255,255,0.55);">
+          <li>Expanding regulatory landscape (AI, data privacy)</li>
+          <li>Climate legislation and environmental advocacy</li>
+          <li>Healthcare reform demands</li>
+          <li>Civil rights and equity movements</li>
+        </ul>
+        <br>Competition is strong at top firms; public interest positions offer loan forgiveness through PSLF.
+      </div>
+    </div>
+  </div>
+
+  <!-- Salary -->
+  <div class="salary-section">
+    <div class="salary-label">Salary Data — Attorneys (Source: BLS Occupational Outlook Handbook, 2025)</div>
+    <div class="salary-bars">
+      <div class="salary-bar-col">
+        <div class="salary-bar-visual" style="height:80px;">
+          <div class="salary-bar-fill" style="height:43%;"></div>
+        </div>
+        <div class="salary-amount">$60K</div>
+        <div class="salary-role">Public Service / First-Year Nonprofit</div>
+      </div>
+      <div class="salary-bar-col">
+        <div class="salary-bar-visual" style="height:80px;">
+          <div class="salary-bar-fill" style="height:70%;"></div>
+        </div>
+        <div class="salary-amount">$140K</div>
+        <div class="salary-role">Median (National Average)</div>
+      </div>
+      <div class="salary-bar-col">
+        <div class="salary-bar-visual" style="height:80px;">
+          <div class="salary-bar-fill" style="height:100%;"></div>
+        </div>
+        <div class="salary-amount">$200K+</div>
+        <div class="salary-role">Big Law First-Year Associate</div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:1rem;">
+      Note: Salaries vary widely by specialization, geographic location, and sector. Public interest attorneys often receive Public Service Loan Forgiveness (PSLF) benefits after 10 years of qualifying employment.
+    </p>
+  </div>
+
+  <!-- Career Growth -->
+  <div class="growth-grid">
+    <div class="growth-card">
+      <span class="growth-card-num">01</span>
+      <strong style="font-size:0.7rem;letter-spacing:0.1em;color:rgba(255,255,255,0.8);">Law Firm Partnership</strong>
+      <span>After 7–10 years, attorneys may make partner at law firms, overseeing caseloads and firm strategy.</span>
+    </div>
+    <div class="growth-card">
+      <span class="growth-card-num">02</span>
+      <strong style="font-size:0.7rem;letter-spacing:0.1em;color:rgba(255,255,255,0.8);">Government &amp; Legislative</strong>
+      <span>Leadership roles as policy directors, General Counsel, or Congressional staffers shaping national legislation.</span>
+    </div>
+    <div class="growth-card">
+      <span class="growth-card-num">03</span>
+      <strong style="font-size:0.7rem;letter-spacing:0.1em;color:rgba(255,255,255,0.8);">Judicial Appointment</strong>
+      <span>Experienced attorneys may be appointed or elected to serve as judges at state or federal levels.</span>
+    </div>
+    <div class="growth-card">
+      <span class="growth-card-num">04</span>
+      <strong style="font-size:0.7rem;letter-spacing:0.1em;color:rgba(255,255,255,0.8);">Policy &amp; Academia</strong>
+      <span>Transition into think tanks, university professorships, or NGO leadership driving systemic change through research.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CAREER-RELATED EDUCATION
+══════════════════════════════════════ -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-label">Section 03</span>
+    <h2 class="section-title">Career-Related <em>Education</em></h2>
+    <div class="section-rule"></div>
+    <p style="max-width:620px;margin:1.5rem auto 0;font-size:0.85rem;color:var(--muted);line-height:1.7;">
+      My school activities and work-based experiences are not incidental — each has been a deliberate step toward a career in public policy law, building the advocacy, analytical, and leadership competencies the field demands.
+    </p>
+  </div>
+
+  <div class="education-grid">
+    <div class="edu-card">
+      <img src="https://static.wixstatic.com/media/85c917_398c46a65a294e59991d4c28ec7a8e00~mv2.jpg" class="edu-card-img" alt="Varsity Debate">
+      <div class="edu-card-title">Varsity Debate</div>
+      <div class="edu-card-sub">2024–Present · NCFL National Qualifier</div>
+      <div class="edu-card-body">
+        <ul>
+          <li>Selected as First Speaker on Varsity EPC Debate — only freshman chosen for a varsity-level role</li>
+          <li>Earned 5th-place at the NCFL National Qualifier in the Declamation category</li>
+          <li>Develops skills in evidence evaluation, logical argumentation, and persuasion under pressure</li>
+        </ul>
+        <div class="impact-quote">
+          "Attorneys must construct logical cases and persuade diverse audiences using facts and reasoning under pressure — this is exactly what every debate round demands."
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <img src="https://static.wixstatic.com/media/85c917_d655fe3cecdb469a99ff2ee1f5e4498c~mv2.jpg" class="edu-card-img" alt="Chief Science Officer">
+      <div class="edu-card-title">Chief Science Officer</div>
+      <div class="edu-card-sub">2023–Present · White House Representative</div>
+      <div class="edu-card-body">
+        <ul>
+          <li>Selected as Chief Science Officer for the intermediate unit</li>
+          <li>Represented CSOs at the National STEM Festival and the White House in Washington, D.C.</li>
+          <li>Spoke directly to U.S. House and Senate representatives about educational equity and STEM infrastructure</li>
+          <li>Advocated for underprivileged students at the PETE &amp; C conference</li>
+          <li>Connected high school STEM programs to middle schools, expanding access to younger students</li>
+        </ul>
+        <div class="impact-quote">
+          "Lobbying Congress for educational equity sparked my passion for advocacy and solidified my goal of using a legal career to drive systemic change through public policy."
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <img src="https://static.wixstatic.com/media/85c917_57da34fd6ea44c5eb819163c8e40a3d1~mv2.png" class="edu-card-img" alt="FBLA Public Speaking">
+      <div class="edu-card-title">FBLA — Public Speaking</div>
+      <div class="edu-card-sub">2024–Present · Regional 1st · State 5th</div>
+      <div class="edu-card-body">
+        <ul>
+          <li>Earned 1st place at the FBLA Regional Conference in Public Speaking</li>
+          <li>Earned 5th place at the Pennsylvania State FBLA Conference in Hershey, PA</li>
+          <li>Developed ability to communicate complex ideas clearly and confidently to diverse audiences</li>
+        </ul>
+        <div class="impact-quote">
+          "Effective oral communication is foundational in law — particularly in courtroom advocacy, legislative testimony, and client representation."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     OBSTACLES & SOLUTIONS
+══════════════════════════════════════ -->
+<section id="obstacles">
+  <div class="section-header">
+    <span class="section-label">Section 04</span>
+    <h2 class="section-title">Challenges &amp; <em>Strategic Solutions</em></h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="obstacles-grid">
+    <div class="obstacle-card">
+      <div class="obstacle-num">01</div>
+      <div class="obstacle-title">Academic &amp; LSAT Entry Barrier</div>
+      <div class="obstacle-problem">Succeeding in the competitive legal field requires balancing a near-perfect GPA with LSAT preparation. The LSAT prioritizes logic over memorization, making analytical reasoning development essential alongside traditional academics.</div>
+      <div class="obstacle-solution-label">My Strategy</div>
+      <div class="obstacle-solution">Building a strong foundation through AP courses in History, Government, and English — sharpening the analytical reading and argumentative writing skills essential for legal success. Debate and Scholastic Writing competitions provide additional preparation.</div>
+    </div>
+    <div class="obstacle-card">
+      <div class="obstacle-num">02</div>
+      <div class="obstacle-title">Financial Burden of Law School</div>
+      <div class="obstacle-problem">Law school is notoriously expensive. In 2026, the average debt for a law graduate exceeded $150,000 — compounded by three years of foregone full-time income during study.</div>
+      <div class="obstacle-solution-label">My Strategy</div>
+      <div class="obstacle-solution">Targeting accelerated "3+3" programs and merit-based scholarships covering full tuition based on LSAT performance. Public interest law also qualifies for federal Public Service Loan Forgiveness (PSLF) after 10 years of qualifying employment.</div>
+    </div>
+    <div class="obstacle-card">
+      <div class="obstacle-num">03</div>
+      <div class="obstacle-title">Mental Health &amp; Burnout</div>
+      <div class="obstacle-problem">The legal profession has some of the highest rates of anxiety and depression. The pressure begins in law school's first year — intensive Socratic teaching methods, massive workloads, and a highly competitive ranking system create lasting stress.</div>
+      <div class="obstacle-solution-label">My Strategy</div>
+      <div class="obstacle-solution">Beginning to build resilience and network early through Debate, FBLA, and CSO activities. These prepare me for high-pressure, high-stakes communication environments and develop the interpersonal support systems critical for long-term professional wellbeing.</div>
+    </div>
+    <div class="obstacle-card">
+      <div class="obstacle-num">04</div>
+      <div class="obstacle-title">The Bar Examination</div>
+      <div class="obstacle-problem">Even after seven years of higher education, new attorneys cannot practice law without passing the Bar Exam — a grueling two-day test with pass rates as low as 50% in states like California and New York.</div>
+      <div class="obstacle-solution-label">My Strategy</div>
+      <div class="obstacle-solution">Planning to invest in commercial bar-prep courses (Barbri, Themis) and accumulate practical experience through law firm or courthouse internships. Making theoretical legal rules concrete through real-world application significantly improves bar passage rates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SKILLS & CERTIFICATION
+══════════════════════════════════════ -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-label">Section 05</span>
+    <h2 class="section-title">Special Skills &amp; <em>Certification</em></h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="skills-layout">
+    <div>
+      <div class="skills-col-label">Professional Skills · Career Alignment</div>
+      <div class="skill-matrix">
+        <div>
+          <div class="skill-row">
+            <span class="skill-name">Legal Research</span>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-track"><div class="skill-progress" style="width:90%"></div></div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.5;">Demonstrated through ISEF research project and academic AP writing — core requirement for all legal practice.</p>
+        </div>
+        <div>
+          <div class="skill-row">
+            <span class="skill-name">Public Speaking &amp; Advocacy</span>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-track"><div class="skill-progress" style="width:95%"></div></div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.5;">1st-place FBLA Regional, 5th-place State and NCFL; lobbied members of Congress as CSO.</p>
+        </div>
+        <div>
+          <div class="skill-row">
+            <span class="skill-name">Policy Analysis &amp; Drafting</span>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-track"><div class="skill-progress" style="width:85%"></div></div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.5;">Engaged in legislative advocacy at federal level; Scholastic Writing Regional Key recipient.</p>
+        </div>
+        <div>
+          <div class="skill-row">
+            <span class="skill-name">Negotiation &amp; Argumentation</span>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-track"><div class="skill-progress" style="width:88%"></div></div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.5;">Varsity EPC Debate — evidence-based argumentation under time constraints mirrors courtroom practice.</p>
+        </div>
+        <div>
+          <div class="skill-row">
+            <span class="skill-name">Ethical Decision Making</span>
+            <span class="skill-level">Proficient</span>
+          </div>
+          <div class="skill-track"><div class="skill-progress" style="width:80%"></div></div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.5;">Patient advocacy at St. Luke's Hospital and human rights work with Amnesty International build ethical judgment.</p>
+        </div>
+        <div>
+          <div class="skill-row">
+            <span class="skill-name">Technology &amp; AI Governance</span>
+            <span class="skill-level">Proficient</span>
+          </div>
+          <div class="skill-track"><div class="skill-progress" style="width:78%"></div></div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.5;">Certified in AI &amp; Law (Lund University/Coursera); 4-year Girls Who Code leadership demonstrates technical fluency.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="skills-col-label">Featured Certification</div>
+      <div class="cert-card">
+        <span class="cert-badge">Formal Credential</span>
+        <div class="cert-title">AI &amp; Law</div>
+        <div class="cert-issuer">Lund University · Coursera Platform</div>
+        <div class="cert-desc">
+          I earned a formal certification in AI &amp; Law from Lund University, one of Scandinavia's leading research institutions, through the Coursera platform.<br><br>
+          The coursework focused on the friction between emerging technologies and existing legal frameworks, including the governance of <strong style="color:var(--gold-light);">algorithmic bias</strong>, <strong style="color:var(--gold-light);">data privacy</strong>, and <strong style="color:var(--gold-light);">accountability in automated decision systems</strong>.<br><br>
+          This certification is directly linked to one of the fastest-growing specializations in public policy law. As AI regulation becomes a priority for legislators and courts, attorneys with technical literacy in AI governance are uniquely positioned for leadership roles at the intersection of technology, ethics, and public policy.
+        </div>
+        <img src="https://static.wixstatic.com/media/85c917_98020db47dbb486d8eb30a6a1b98e604~mv2.jpg" alt="AI & Law Certificate" class="cert-img">
+      </div>
+
+      <div class="cert-card" style="margin-top:0;">
+        <span class="cert-badge">Leadership Recognition</span>
+        <div class="cert-title">Chief Science Officer</div>
+        <div class="cert-issuer">Intermediate Unit · Pennsylvania</div>
+        <div class="cert-desc">
+          Formal selection as a Chief Science Officer, representing students at the national level including the White House STEM Festival and direct Congressional advocacy. This leadership role is endorsed through the CSO program's formal credentialing process and reflects recognized excellence in science communication, policy engagement, and student leadership — all foundational to a career in public policy law.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SOURCES
+══════════════════════════════════════ -->
+<section id="sources">
+  <div class="section-header">
+    <span class="section-label">Section 06</span>
+    <h2 class="section-title">Cited <em>Sources</em></h2>
+    <div class="section-rule"></div>
+    <p style="max-width:500px;margin:1.5rem auto 0;font-size:0.82rem;color:var(--muted);line-height:1.7;">
+      All research presented in this portfolio is supported by credible, professionally legitimate sources. Copyrighted material, images, and trademarks are properly documented.
+    </p>
+  </div>
+
+  <div class="sources-grid">
+    <div class="source-item">
+      <span class="source-num">1</span>
+      <div class="source-text"><strong>Harvard Law School.</strong> (n.d.). Public interest compensation information. <em>Bernard Koteen Office of Public Interest Advising.</em> Retrieved from https://hls.harvard.edu/bernard-koteen-office-of-public-interest-advising/</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">2</span>
+      <div class="source-text"><strong>Engler, R.</strong> (n.d.). Everything you need to know about becoming a public interest lawyer. <em>New England Law Boston.</em> Retrieved from https://www.nesl.edu/blog/detail/everything-you-need-to-know-about-becoming-a-public-interest-lawyer</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">3</span>
+      <div class="source-text"><strong>Villanova University.</strong> (n.d.). Careers in public interest. <em>Charles Widger School of Law.</em> Retrieved from https://www1.villanova.edu/university/law/experience/public-interest/public-interest-careers.html</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">4</span>
+      <div class="source-text"><strong>Jansson, B. S.</strong> (2024). <em>Becoming an Effective Policy Advocate: From Policy Practice to Social Justice.</em> Cengage Learning. (Standard textbook for advocacy strategy).</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">5</span>
+      <div class="source-text"><strong>Bureau of Labor Statistics.</strong> (2025). <em>Occupational Outlook Handbook: Lawyers.</em> U.S. Department of Labor. Retrieved from https://www.bls.gov/ooh/legal/lawyers.htm</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">6</span>
+      <div class="source-text"><strong>National Association of Student Personnel Administrators (NASPA).</strong> (2026). <em>Public Policy Agenda &amp; Advocacy Resource Hub.</em> (Source for current legislative trends).</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">7</span>
+      <div class="source-text"><strong>Pennsylvania General Assembly.</strong> (n.d.). <em>The Legislative Process in Pennsylvania.</em> PA.gov. (Research for understanding how local bills become law).</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">8</span>
+      <div class="source-text"><strong>National Association of Social Workers.</strong> (2026). <em>Advocacy Resources.</em></div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">9</span>
+      <div class="source-text"><strong>Lund University / Coursera.</strong> (n.d.). <em>AI &amp; Law — Course Curriculum and Certification.</em> Used as basis for certification section.</div>
+    </div>
+    <div class="source-item">
+      <span class="source-num">10</span>
+      <div class="source-text"><strong>Fink, D.</strong> FBLA Advisor, Parkland High School. (Personal reference and professional guidance).</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-label">Section 07</span>
+    <h2 class="section-title">Get In <em>Touch</em></h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="contact-content">
+    <div class="contact-info">
+      <div class="contact-block">
+        <div class="contact-block-label">Name</div>
+        <div class="contact-block-value">Aaditri Suresh</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">School</div>
+        <div class="contact-block-value">Parkland High School<br>Allentown, PA 18104</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">Email</div>
+        <div class="contact-block-value">info@aaditris.com</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">Phone</div>
+        <div class="contact-block-value">123-456-7890</div>
+      </div>
+      <div class="contact-block" style="grid-column:1/-1;">
+        <div class="contact-block-label">Graduation</div>
+        <div class="contact-block-value">May 24, 2028 · Anticipated</div>
+      </div>
+    </div>
+    <p class="contact-note">
+      "I believe that the most meaningful change happens at the intersection of law, technology, and public policy. I am actively building the skills to make that change."
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Aaditri Suresh</div>
+  <div class="footer-copy">© 2026 Aaditri Suresh. All rights reserved.</div>
+  <div class="footer-fbla">FBLA Career Portfolio<br>2025–2026 · Public Policy Advocate</div>
+</footer>
+
+</body>
+</html>
